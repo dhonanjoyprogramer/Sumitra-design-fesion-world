@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sumitra Design & Fashion World - Premium Online Fashion Store">
+<title>Sumitra Design & Fashion World</title>
+
+<style>
+:root{
+  --pink:#b51f64;
+  --dark:#17131a;
+  --light:#fff7fb;
+  --gold:#c89b3c;
+  --text:#211b20;
+  --muted:#777078;
+  --border:#eadde5;
+  --white:#ffffff;
+  --shadow:0 15px 45px rgba(45,15,30,.12);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:linear-gradient(135deg,#fff8fb,#ffffff,#fff3f7);
+  color:var(--text);
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* TOP BAR */
+
+.topbar{
+  background:var(--dark);
+  color:#fff;
+  text-align:center;
+  padding:9px;
+  font-size:12px;
+  letter-spacing:.5px;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-family:Georgia,serif;
+  font-size:23px;
+  font-weight:bold;
+  color:var(--pink);
+}
+
+.logo small{
+  display:block;
+  color:var(--gold);
+  font-family:Arial,sans-serif;
+  font-size:9px;
+  letter-spacing:2px;
+  margin-top:3px;
+}
+
+.navlinks{
+  display:flex;
+  gap:25px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.navlinks a:hover{
+  color:var(--pink);
+}
+
+.cart-button{
+  position:relative;
+  border:none;
+  background:var(--dark);
+  color:#fff;
+  border-radius:50px;
+  padding:11px 17px;
+  font-weight:bold;
+}
+
+.cart-count{
+  position:absolute;
+  right:-5px;
+  top:-7px;
+  background:var(--pink);
+  width:21px;
+  height:21px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:11px;
+}
+
+/* HERO */
+
+.hero{
+  max-width:1200px;
+  margin:35px auto;
+  padding:70px 40px;
+  border-radius:30px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(255,200,225,.35),transparent 25%),
+    linear-gradient(120deg,#24151e,#8e2856,#d05a8b);
+  position:relative;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:330px;
+  height:330px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:50%;
+  right:-100px;
+  bottom:-150px;
+  box-shadow:
+  0 0 0 40px rgba(255,255,255,.04),
+  0 0 0 80px rgba(255,255,255,.03);
+}
+
+.hero h1{
+  max-width:720px;
+  font-family:Georgia,serif;
+  font-size:clamp(42px,6vw,72px);
+  line-height:1;
+}
+
+.hero p{
+  max-width:600px;
+  margin:20px 0 28px;
+  color:#ffeaf4;
+  line-height:1.7;
+}
+
+.hero-button{
+  display:inline-block;
+  background:#fff;
+  color:#8e2856;
+  padding:14px 23px;
+  border-radius:50px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.hero-button:hover{
+  transform:translateY(-3px);
+}
+
+/* CONTAINER */
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+}
+
+.section-title{
+  margin:35px 0 20px;
+}
+
+.section-title h2{
+  font-family:Georgia,serif;
+  font-size:34px;
+}
+
+.section-title p{
+  color:var(--muted);
+  margin-top:6px;
+}
+
+/* CONTROLS */
+
+.controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:22px;
+}
+
+.search,
+.category{
+  padding:12px 15px;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:50px;
+  outline:none;
+}
+
+.search{
+  min-width:240px;
+}
+
+/* PRODUCTS */
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.product-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 7px 25px rgba(50,20,35,.06);
+  transition:.35s;
+}
+
+.product-card:hover{
+  transform:translateY(-7px);
+  box-shadow:var(--shadow);
+}
+
+.product-image{
+  height:285px;
+  overflow:hidden;
+  background:#f5e9ef;
+}
+
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.product-card:hover img{
+  transform:scale(1.07);
+}
+
+.product-info{
+  padding:16px;
+}
+
+.product-category{
+  color:var(--pink);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.product-name{
+  font-weight:bold;
+  margin:7px 0;
+}
+
+.product-price{
+  font-size:19px;
+  font-weight:900;
+}
+
+.old-price{
+  font-size:13px;
+  color:#999;
+  text-decoration:line-through;
+  margin-left:5px;
+}
+
+.add-button{
+  width:100%;
+  margin-top:13px;
+  border:none;
+  border-radius:12px;
+  padding:12px;
+  background:var(--dark);
+  color:#fff;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.add-button:hover{
+  background:var(--pink);
+}
+
+/* ABOUT */
+
+.about{
+  margin-top:50px;
+  padding:30px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(40,10,25,.05);
+}
+
+.about h2{
+  font-family:Georgia,serif;
+  font-size:30px;
+}
+
+.about p{
+  color:var(--muted);
+  line-height:1.8;
+  margin-top:10px;
+}
+
+/* FOOTER */
+
+footer{
+  margin-top:60px;
+  padding:40px 20px;
+  background:var(--dark);
+  color:#fff;
+  text-align:center;
+}
+
+footer p{
+  color:#aaa;
+  margin-top:8px;
+}
+
+/* CART DRAWER */
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  z-index:500;
+  display:none;
+}
+
+.overlay.active{
+  display:block;
+}
+
+.cart-panel{
+  position:absolute;
+  right:0;
+  top:0;
+  width:min(440px,95vw);
+  height:100%;
+  background:#fff;
+  padding:22px;
+  overflow-y:auto;
+  box-shadow:-15px 0 40px rgba(0,0,0,.2);
+}
+
+.cart-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+.close-button{
+  width:36px;
+  height:36px;
+  border:none;
+  border-radius:50%;
+  background:#f1e9ed;
+}
+
+.cart-item{
+  display:grid;
+  grid-template-columns:65px 1fr auto;
+  gap:10px;
+  align-items:center;
+  padding:12px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.cart-item img{
+  width:65px;
+  height:75px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.cart-item-name{
+  font-weight:bold;
+  font-size:14px;
+}
+
+.quantity{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:7px;
+}
+
+.quantity button{
+  width:25px;
+  height:25px;
+  border:none;
+  border-radius:7px;
+  background:#eee;
+}
+
+.cart-total{
+  display:flex;
+  justify-content:space-between;
+  font-size:20px;
+  font-weight:900;
+  margin:20px 0;
+}
+
+.checkout-button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:var(--pink);
+  color:#fff;
+  font-weight:bold;
+}
+
+.empty-cart{
+  text-align:center;
+  padding:50px 10px;
+  color:var(--muted);
+}
+
+/* CHECKOUT */
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:700;
+  background:rgba(0,0,0,.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+
+.modal.active{
+  display:flex;
+}
+
+.modal-box{
+  width:min(650px,100%);
+  max-height:94vh;
+  overflow:auto;
+  background:#fff;
+  border-radius:23px;
+  padding:25px;
+}
+
+.modal-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:17px;
+}
+
+.notice{
+  padding:12px;
+  background:#fff8e8;
+  border:1px solid #eed493;
+  border-radius:11px;
+  color:#68521d;
+  font-size:13px;
+  margin-bottom:16px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field input,
+.field textarea,
+.field select{
+  padding:12px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  outline:none;
+}
+
+.field textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.place-order{
+  width:100%;
+  margin-top:15px;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:var(--pink);
+  color:#fff;
+  font-weight:bold;
+  font-size:16px;
+}
+
+/* SUCCESS */
+
+.success{
+  text-align:center;
+  padding:30px 5px;
+  display:none;
+}
+
+.success.active{
+  display:block;
+}
+
+.success-icon{
+  font-size:55px;
+}
+
+.order-id{
+  color:var(--pink);
+  font-size:26px;
+  font-weight:900;
+  margin:12px 0;
+}
+
+.continue{
+  width:100%;
+  padding:13px;
+  border:none;
+  border-radius:12px;
+  background:var(--dark);
+  color:#fff;
+  margin-top:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+  .product-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:650px){
+
+  .navlinks{
+    display:none;
+  }
+
+  .hero{
+    margin:18px 12px;
+    padding:45px 24px;
+  }
+
+  .container{
+    padding:0 12px;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .product-image{
+    height:220px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+}
+
+@media(max-width:400px){
+
+  .product-grid{
+    grid-template-columns:1fr;
+  }
+
+  .product-image{
+    height:300px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  ✨ PREMIUM FASHION • NEW COLLECTION • ONLINE ORDER
+</div>
+
+<header>
+  <div class="nav">
+
+    <a href="#" class="logo">
+      SUMITRA
+      <small>DESIGN & FASHION WORLD</small>
+    </a>
+
+    <nav class="navlinks">
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="cart-button" onclick="openCart()">
+      🛒 Cart
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+  </div>
+</header>
+
+
+<section class="hero">
+
+  <h1>
+    Style made for your story.
+  </h1>
+
+  <p>
+    Discover elegant fashion, modern designs and stylish collections
+    from Sumitra Design & Fashion World.
+  </p>
+
+  <a href="#shop" class="hero-button">
+    Explore Collection →
+  </a>
+
+</section>
+
+
+<section class="container" id="shop">
+
+  <div class="section-title">
+    <h2>Featured Collection</h2>
+    <p>Fresh styles for every occasion.</p>
+  </div>
+
+  <div class="controls">
+
+    <input
+      class="search"
+      id="search"
+      placeholder="Search products..."
+      oninput="renderProducts()"
+    >
+
+    <select
+      class="category"
+      id="category"
+      onchange="renderProducts()"
+    >
+      <option value="all">All Categories</option>
+      <option value="Women">Women</option>
+      <option value="Men">Men</option>
+      <option value="Accessories">Accessories</option>
+    </select>
+
+  </div>
+
+  <div class="product-grid" id="products"></div>
+
+</section>
+
+
+<section class="container" id="about">
+
+  <div class="about">
+
+    <h2>About Sumitra</h2>
+
+    <p>
+      Sumitra Design & Fashion World brings stylish clothing,
+      accessories and modern fashion products to customers
+      through a simple online shopping experience.
+    </p>
+
+  </div>
+
+</section>
+
+
+<footer id="contact">
+
+  <strong>
+    SUMITRA DESIGN & FASHION WORLD
+  </strong>
+
+  <p>
+    Premium Online Fashion Store
+  </p>
+
+  <p>
+    📧 sumitrakurmi246@gmail.com
+  </p>
+
+</footer>
+
+
+<!-- CART -->
+
+<div
+  class="overlay"
+  id="cartOverlay"
+  onclick="outsideCart(event)"
+>
+
+  <aside class="cart-panel">
+
+    <div class="cart-header">
+
+      <h2>Your Cart</h2>
+
+      <button
+        class="close-button"
+        onclick="closeCart()"
+      >
+        ✕
+      </button>
+
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div id="cartBottom"></div>
+
+  </aside>
+
+</div>
+
+
+<!-- CHECKOUT MODAL -->
+
+<div
+  class="modal"
+  id="checkoutModal"
+>
+
+  <div class="modal-box">
+
+    <div id="checkoutArea">
+
+      <div class="modal-header">
+
+        <h2>Checkout</h2>
+
+        <button
+          class="close-button"
+          onclick="closeCheckout()"
+        >
+          ✕
+        </button>
+
+      </div>
+
+      <div class="notice">
+
+        📧 Your order details will be sent to
+        <b>sumitrakurmi246@gmail.com</b>.
+
+        An Order ID will be generated automatically.
+
+      </div>
+
+
+      <!--
+        FORM SUBMIT EMAIL SERVICE
+
+        No Firebase required.
+      -->
+
+      <form
+        id="orderForm"
+        action="https://formsubmit.co/sumitrakurmi246@gmail.com"
+        method="POST"
+      >
+
+        <!-- EMAIL SETTINGS -->
+
+        <input
+          type="hidden"
+          name="_subject"
+          id="emailSubject"
+        >
+
+        <input
+          type="hidden"
+          name="_template"
+          value="table"
+        >
+
+        <input
+          type="hidden"
+          name="_captcha"
+          value="false"
+        >
+
+        <!-- ORDER INFORMATION -->
+
+        <input
+          type="hidden"
+          name="Order ID"
+          id="orderIdField"
+        >
+
+        <input
+          type="hidden"
+          name="Order Date"
+          id="orderDateField"
+        >
+
+        <input
+          type="hidden"
+          name="Products"
+          id="itemsField"
+        >
+
+        <input
+          type="hidden"
+          name="Total Amount"
+          id="totalField"
+        >
+
+
+        <div class="form-grid">
+
+          <div class="field">
+
+            <label>
+              Full Name *
+            </label>
+
+            <input
+              type="text"
+              name="Customer Name"
+              required
+              placeholder="Customer name"
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label>
+              Phone *
+            </label>
+
+            <input
+              type="tel"
+              name="Phone"
+              required
+              placeholder="10 digit mobile number"
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label>
+              Email
+            </label>
+
+            <input
+              type="email"
+              name="Customer Email"
+              placeholder="customer@email.com"
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label>
+              Payment Method
+            </label>
+
+            <select name="Payment Method">
+
+              <option>
+                pre paid 
+              </option>
+
+              <option>
+                UPI
+              </option>
+        
+
+            </select>
+
+          </div>
+
+
+          <div class="field full">
+
+            <label>
+              Delivery Address *
+            </label>
+
+            <textarea
+              name="Delivery Address"
+              required
+              placeholder="House / Village / Road / Locality"
+            ></textarea>
+
+          </div>
+
+
+          <div class="field">
+
+            <label>
+              City
+            </label>
+
+            <input
+              type="text"
+              name="City"
+              placeholder="City"
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label>
+              PIN Code
+            </label>
+
+            <input
+              type="text"
+              name="PIN Code"
+              inputmode="numeric"
+              placeholder="PIN"
+            >
+
+          </div>
+
+
+          <div class="field full">
+
+            <label>
+              Customer Note
+            </label>
+
+            <textarea
+              name="Customer Note"
+              placeholder="Size, colour or other requirement"
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="place-order"
+        >
+          🛍️ Place Order & Send Email
+        </button>
+
+      </form>
+
+    </div>
+
+
+    <!-- SUCCESS -->
+
+    <div
+      class="success"
+      id="successArea"
+    >
+
+      <div class="success-icon">
+        ✅
+      </div>
+
+      <h2>
+        Order Submitted
+      </h2>
+
+      <p>
+        Your order request has been submitted successfully.
+      </p>
+
+      <div
+        class="order-id"
+        id="successOrderId"
+      ></div>
+
+      <p>
+        Please save your Order ID.
+      </p>
+
+      <button
+        class="continue"
+        onclick="finishOrder()"
+      >
+        Continue Shopping
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================================
+   PRODUCT DATABASE
+   ========================================= */
+
+const products = [
+
+  {
+    id:1,
+    name:"Elegant Floral Dress",
+    category:"Women",
+    price:1299,
+    old:1699,
+    img:"https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=700&q=80"
+  },
+
+  {
+    id:2,
+    name:"Classic Kurti Set",
+    category:"Women",
+    price:999,
+    old:1299,
+    img:"https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=700&q=80"
+  },
+
+  {
+    id:3,
+    name:"Premium Men's Shirt",
+    category:"Men",
+    price:899,
+    old:1199,
+    img:"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=700&q=80"
+  },
+
+  {
+    id:4,
+    name:"Fashion Handbag",
+    category:"Accessories",
+    price:799,
+    old:999,
+    img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80"
+  },
+
+  {
+    id:5,
+    name:"Modern Saree",
+    category:"Women",
+    price:1499,
+    old:1999,
+    img:"https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80"
+  },
+
+  {
+    id:6,
+    name:"Casual Men's T-Shirt",
+    category:"Men",
+    price:599,
+    old:799,
+    img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80"
+  },
+
+  {
+    id:7,
+    name:"Minimal Watch",
+    category:"Accessories",
+    price:1099,
+    old:1499,
+    img:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=700&q=80"
+  },
+
+  {
+    id:8,
+    name:"Designer Scarf",
+    category:"Accessories",
+    price:499,
+    old:699,
+    img:"https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=700&q=80"
+  }
+
+];
+
+
+/* =========================================
+   CART
+   ========================================= */
+
+let cart =
+  JSON.parse(
+    localStorage.getItem("sumitra_cart") || "[]"
+  );
+
+
+function saveCart(){
+
+  localStorage.setItem(
+    "sumitra_cart",
+    JSON.stringify(cart)
+  );
+
+  updateCartCount();
+
+  renderCart();
+
+}
+
+
+function updateCartCount(){
+
+  const count =
+    cart.reduce(
+      (total,item) => total + item.qty,
+      0
+    );
+
+  document.getElementById(
+    "cartCount"
+  ).textContent = count;
+
+}
+
+
+/* =========================================
+   PRODUCT RENDER
+   ========================================= */
+
+function renderProducts(){
+
+  const search =
+    document
+      .getElementById("search")
+      .value
+      .toLowerCase();
+
+  const category =
+    document
+      .getElementById("category")
+      .value;
+
+
+  const list =
+    products.filter(product => {
+
+      const matchesSearch =
+        product.name
+          .toLowerCase()
+          .includes(search);
+
+      const matchesCategory =
+        category === "all" ||
+        product.category === category;
+
+      return matchesSearch &&
+             matchesCategory;
+
+    });
+
+
+  document.getElementById(
+    "products"
+  ).innerHTML =
+
+    list.map(product => `
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <img
+            src="${product.img}"
+            alt="${product.name}"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-category">
+            ${product.category}
+          </div>
+
+          <div class="product-name">
+            ${product.name}
+          </div>
+
+          <div class="product-price">
+
+            ₹${product.price.toLocaleString("en-IN")}
+
+            <span class="old-price">
+              ₹${product.old.toLocaleString("en-IN")}
+            </span>
+
+          </div>
+
+          <button
+            class="add-button"
+            onclick="addToCart(${product.id})"
+          >
+            Add to Cart
+          </button>
+
+        </div>
+
+      </article>
+
+    `).join("");
+
+
+  if(!list.length){
+
+    document.getElementById(
+      "products"
+    ).innerHTML = `
+
+      <p style="
+        grid-column:1/-1;
+        text-align:center;
+        padding:50px;
+        color:#777;
+      ">
+        No products found.
+      </p>
+
+    `;
+
+  }
+
+}
+
+
+/* =========================================
+   ADD TO CART
+   ========================================= */
+
+function addToCart(id){
+
+  const existing =
+    cart.find(
+      item => item.id === id
+    );
+
+
+  if(existing){
+
+    existing.qty++;
+
+  }else{
+
+    cart.push({
+      id:id,
+      qty:1
+    });
+
+  }
+
+
+  saveCart();
+
+  openCart();
+
+}
+
+
+/* =========================================
+   CHANGE QUANTITY
+   ========================================= */
+
+function changeQuantity(id,change){
+
+  const item =
+    cart.find(
+      product => product.id === id
+    );
+
+  if(!item) return;
+
+
+  item.qty += change;
+
+
+  if(item.qty <= 0){
+
+    cart =
+      cart.filter(
+        product => product.id !== id
+      );
+
+  }
+
+
+  saveCart();
+
+}
+
+
+/* =========================================
+   TOTAL
+   ========================================= */
+
+function cartTotal(){
+
+  return cart.reduce(
+    (total,item) => {
+
+      const product =
+        products.find(
+          p => p.id === item.id
+        );
+
+      return total +
+        product.price * item.qty;
+
+    },
+    0
+  );
+
+}
+
+
+/* =========================================
+   CART RENDER
+   ========================================= */
+
+function renderCart(){
+
+  const cartItems =
+    document.getElementById(
+      "cartItems"
+    );
+
+  const cartBottom =
+    document.getElementById(
+      "cartBottom"
+    );
+
+
+  if(!cart.length){
+
+    cartItems.innerHTML = `
+
+      <div class="empty-cart">
+
+        🛍️
+
+        <h3>Your cart is empty</h3>
+
+        <p>Add something beautiful.</p>
+
+      </div>
+
+    `;
+
+    cartBottom.innerHTML = "";
+
+    return;
+
+  }
+
+
+  cartItems.innerHTML =
+
+    cart.map(item => {
+
+      const product =
+        products.find(
+          p => p.id === item.id
+        );
+
+
+      return `
+
+        <div class="cart-item">
+
+          <img
+            src="${product.img}"
+            alt=""
+          >
+
+          <div>
+
+            <div class="cart-item-name">
+              ${product.name}
+            </div>
+
+            <div>
+              ₹${product.price.toLocaleString("en-IN")}
+            </div>
+
+            <div class="quantity">
+
+              <button
+                onclick="changeQuantity(${product.id},-1)"
+              >
+                −
+              </button>
+
+              <span>
+                ${item.qty}
+              </span>
+
+              <button
+                onclick="changeQuantity(${product.id},1)"
+              >
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+          <strong>
+            ₹${(
+              product.price *
+              item.qty
+            ).toLocaleString("en-IN")}
+          </strong>
+
+        </div>
+
+      `;
+
+    }).join("");
+
+
+  cartBottom.innerHTML = `
+
+    <div class="cart-total">
+
+      <span>Total</span>
+
+      <span>
+        ₹${cartTotal().toLocaleString("en-IN")}
+      </span>
+
+    </div>
+
+    <button
+      class="checkout-button"
+      onclick="openCheckout()"
+    >
+      Proceed to Checkout
+    </button>
+
+  `;
+
+}
+
+
+/* =========================================
+   CART OPEN/CLOSE
+   ========================================= */
+
+function openCart(){
+
+  document
+    .getElementById("cartOverlay")
+    .classList.add("active");
+
+  renderCart();
+
+}
+
+
+function closeCart(){
+
+  document
+    .getElementById("cartOverlay")
+    .classList.remove("active");
+
+}
+
+
+function outsideCart(event){
+
+  if(
+    event.target.id ===
+    "cartOverlay"
+  ){
+
+    closeCart();
+
+  }
+
+}
+
+
+/* =========================================
+   ORDER ID
+   ========================================= */
+
+function generateOrderId(){
+
+  const now = new Date();
+
+  const date =
+    now.getFullYear()
+    .toString()
+    .slice(-2)
+    +
+    String(
+      now.getMonth()+1
+    ).padStart(2,"0")
+    +
+    String(
+      now.getDate()
+    ).padStart(2,"0");
+
+
+  const random =
+    Math.random()
+      .toString(36)
+      .substring(2,7)
+      .toUpperCase();
+
+
+  return "SDFW-" +
+         date +
+         "-" +
+         random;
+
+}
+
+
+/* =========================================
+   CHECKOUT
+   ========================================= */
+
+let currentOrderId = "";
+
+
+function openCheckout(){
+
+  if(!cart.length){
+
+    alert(
+      "Please add a product to your cart first."
+    );
+
+    return;
+
+  }
+
+
+  currentOrderId =
+    generateOrderId();
+
+
+  const now =
+    new Date();
+
+
+  document.getElementById(
+    "orderIdField"
+  ).value =
+    currentOrderId;
+
+
+  document.getElementById(
+    "orderDateField"
+  ).value =
+    now.toLocaleString("en-IN");
+
+
+  document.getElementById(
+    "emailSubject"
+  ).value =
+    "NEW ORDER " +
+    currentOrderId +
+    " - Sumitra Design & Fashion World";
+
+
+  document.getElementById(
+    "totalField"
+  ).value =
+    "₹" +
+    cartTotal().toLocaleString("en-IN");
+
+
+  document.getElementById(
+    "itemsField"
+  ).value =
+
+    cart.map(item => {
+
+      const product =
+        products.find(
+          p => p.id === item.id
+        );
+
+      return (
+        product.name +
+        " | Qty: " +
+        item.qty +
+        " | ₹" +
+        (
+          product.price *
+          item.qty
+        ).toLocaleString("en-IN")
+      );
+
+    }).join(" || ");
+
+
+  document
+    .getElementById("checkoutModal")
+    .classList.add("active");
+
+
+  document
+    .getElementById("checkoutArea")
+    .style.display = "block";
+
+
+  document
+    .getElementById("successArea")
+    .classList.remove("active");
+
+}
+
+
+/* =========================================
+   CLOSE CHECKOUT
+   ========================================= */
+
+function closeCheckout(){
+
+  document
+    .getElementById("checkoutModal")
+    .classList.remove("active");
+
+}
+
+
+/* =========================================
+   FORM SUBMISSION
+   ========================================= */
+
+document
+  .getElementById("orderForm")
+  .addEventListener(
+    "submit",
+    function(){
+
+      /*
+        FormSubmit handles the email.
+
+        The browser will leave this page
+        and submit the form normally.
+      */
+
+      localStorage.removeItem(
+        "sumitra_cart"
+      );
+
+    }
+  );
+
+
+/* =========================================
+   FINISH ORDER
+   ========================================= */
+
+function finishOrder(){
+
+  cart = [];
+
+  localStorage.removeItem(
+    "sumitra_cart"
+  );
+
+  updateCartCount();
+
+  renderCart();
+
+  closeCheckout();
+
+  closeCart();
+
+}
+
+
+/* =========================================
+   INITIALIZE
+   ========================================= */
+
+renderProducts();
+
+renderCart();
+
+updateCartCount();
+
+</script>
+
+</body>
+</html>
